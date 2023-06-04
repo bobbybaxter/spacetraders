@@ -7,12 +7,14 @@
     "node": ">=16.0.0"
   },
   "scripts": {
+    "build": "echo Build Functions",
     "start": "NODE_ENV=PROD tsx ./index.ts",
     "local": "NODE_ENV=DEV tsx watch ./index.ts"
   },
   "author": "Bob Baxter",
   "license": "ISC",
   "dependencies": {
+    "@netlify/functions": "^1.6.0",
     "axios": "^1.4.0",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
@@ -23,9 +25,11 @@
     "helmet": "^7.0.0",
     "lodash": "^4.17.21",
     "morgan": "^1.10.0",
+    "netlify-lambda": "^2.0.16",
     "nodemon": "^2.0.22",
     "pg": "^8.11.0",
     "sequelize": "^6.32.0",
+    "serverless-http": "^3.2.0",
     "winston": "^3.9.0",
     "winston-transport": "^4.5.0"
   },
@@ -44,6 +48,7 @@
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-simple-import-sort": "^10.0.0",
+    "netlify-cli": "^15.3.1",
     "prettier": "^2.8.8",
     "ts-node": "^10.9.1",
     "tsconfig-paths": "^4.2.0",

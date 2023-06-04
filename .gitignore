@@ -132,3 +132,6 @@ dist
 
 # Local config files
 config.local.**
+
+# Local Netlify folder
+.netlify
