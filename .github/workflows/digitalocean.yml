@@ -20,4 +20,5 @@ jobs:
             touch .env
             echo "${{ secrets.ENV }}" > .env
             git pull origin main
+            npm run do:ci
             npm run do:restart
