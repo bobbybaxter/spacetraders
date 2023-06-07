@@ -28,9 +28,9 @@
 		"./"
 	],
 	"exclude": [
-		"/node_modules/",
-		"/coverage/",
-		"/dist/",
-		"/package-lock.json/"
+		"node_modules/",
+		"coverage/",
+		"dist/",
+		"package-lock.json/"
 	],
 }
