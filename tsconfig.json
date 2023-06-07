@@ -21,8 +21,8 @@
 		"esm": true,
 		"require": [
 			"tsconfig-paths/register"
-		]
-		// "experimentalSpecifierResolution": "node"
+		],
+		"experimentalSpecifierResolution": "node"
 	},
 	"include": [
 		"./"
