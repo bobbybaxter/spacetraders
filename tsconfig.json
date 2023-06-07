@@ -24,10 +24,13 @@
 		]
 		// "experimentalSpecifierResolution": "node"
 	},
+	"include": [
+		"./"
+	],
 	"exclude": [
-		"node_modules",
-		"coverage",
-		"dist",
-		"views"
+		"/node_modules/",
+		"/coverage/",
+		"/dist/",
+		"/package-lock.json/"
 	],
 }

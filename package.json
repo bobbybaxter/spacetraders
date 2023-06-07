@@ -8,9 +8,11 @@
   },
   "scripts": {
     "start": "NODE_ENV=PROD tsx index.ts",
+    "build": "tsc --build",
     "local": "NODE_ENV=DEV tsx watch index.ts",
-    "ci": "rm -rf node_modules && npm ci",
-    "restart": "pm2 restart index.ts"
+    "do:ci": "rm -rf node_modules && npm ci",
+    "do:start": "tsc --build && pm2 start ./dist/index.js",
+    "do:restart": "tsc --build && pm2 restart ./dist/index.js"
   },
   "author": "Bob Baxter",
   "license": "ISC",

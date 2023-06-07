@@ -16,10 +16,23 @@ jobs:
           key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
           script: |
-            git clone git@github.com:bobbybaxter/spacetraders.git
             cd spacetraders
-            nvm use
-            git pull origin main
-            echo "${{ secrets.ENV }}" > .env
-            npm ci
-            npm restart
+
+      - name: Checkout master branch
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.x'
+
+      - name: Build env variables
+        run: |
+          touch .env
+          echo "${{ secrets.ENV }}" > .env
+
+      - name: Install dependencies
+        run: npm do:ci
+
+      - name: Restart server application
+        run: npm do:restart
