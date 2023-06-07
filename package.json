@@ -11,8 +11,8 @@
     "build": "tsc --build --clean",
     "local": "NODE_ENV=DEV tsx watch index.ts",
     "do:ci": "rm -rf node_modules && npm ci",
-    "do:start": "npm run build && pm2 start ecosystem",
-    "do:restart": "npm run build && pm2 restart ecosystem"
+    "do:start": "npm run build && pm2 start ecosystem.config.cjs",
+    "do:restart": "npm run build && pm2 restart ecosystem.config.cjs"
   },
   "author": "Bob Baxter",
   "license": "ISC",
