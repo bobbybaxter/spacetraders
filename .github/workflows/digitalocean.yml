@@ -32,7 +32,7 @@ jobs:
           echo "${{ secrets.ENV }}" > .env
 
       - name: Install dependencies
-        run: npm do:ci
+        run: npm run do:ci
 
       - name: Restart server application
-        run: npm do:restart
+        run: npm run do:restart
