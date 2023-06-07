@@ -8,7 +8,9 @@
   },
   "scripts": {
     "start": "NODE_ENV=PROD tsx ./index.ts",
-    "local": "NODE_ENV=DEV tsx watch ./index.ts"
+    "local": "NODE_ENV=DEV tsx watch ./index.ts",
+    "ci": "rm -rf node_modules && npm ci",
+    "restart": "pm2 restart ./index.ts"
   },
   "author": "Bob Baxter",
   "license": "ISC",
