@@ -9,11 +9,13 @@ dotenv.config();
 const db: any = {};
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const { DB_DATABASE = '', DB_USERNAME = '', DB_PASSWORD = '', DB_HOST = '' } = process.env;
+const { DB_DATABASE = '', DB_USERNAME = '', DB_PASSWORD = '', DB_HOST = '', DB_PORT = '' } = process.env;
 
+console.log('process.env.NODE_ENV :>> ', process.env.NODE_ENV);
 const sequelize = new Sequelize(DB_DATABASE, DB_USERNAME, DB_PASSWORD, {
   host: process.env.NODE_ENV === 'DEV' ? 'localhost' : DB_HOST,
   dialect: 'postgres',
+  port: parseInt(DB_PORT, 2),
   pool: {
     max: 300,
     min: 10,
