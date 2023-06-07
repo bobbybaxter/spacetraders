@@ -17,22 +17,7 @@ jobs:
           port: ${{ secrets.PORT }}
           script: |
             cd spacetraders
-
-      - name: Checkout master branch
-        uses: actions/checkout@v3
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18.x'
-
-      - name: Build env variables
-        run: |
-          touch .env
-          echo "${{ secrets.ENV }}" > .env
-
-      - name: Install dependencies
-        run: npm run do:ci
-
-      - name: Restart server application
-        run: npm run do:restart
+            touch .env
+            echo "${{ secrets.ENV }}" > .env
+            git pull origin main
+            npm run do:restart

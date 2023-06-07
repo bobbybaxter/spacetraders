@@ -9,6 +9,7 @@
 		"inlineSourceMap": true,
 		"strict": true,
 		"allowJs": true,
+		"allowImportingTsExtensions": true,
 		// "checkJs": true,
 		"rootDir": ".",
 		"outDir": "dist/",

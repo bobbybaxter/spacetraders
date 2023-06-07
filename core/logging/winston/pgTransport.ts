@@ -1,4 +1,4 @@
-import db from 'db/index';
+import db from 'db/index.ts';
 import _ from 'lodash';
 import Transport, { TransportStreamOptions } from 'winston-transport';
 

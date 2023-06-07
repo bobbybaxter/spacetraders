@@ -1,4 +1,4 @@
-import app from 'app';
+import app from 'app.ts';
 import debugFactory from 'debug';
 import http from 'http';
 
