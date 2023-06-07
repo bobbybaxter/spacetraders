@@ -25,7 +25,8 @@
 		"experimentalSpecifierResolution": "node"
 	},
 	"include": [
-		"./"
+		"./",
+		"./.env"
 	],
 	"exclude": [
 		"node_modules/",

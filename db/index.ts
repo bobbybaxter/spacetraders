@@ -11,7 +11,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const { DB_DATABASE = '', DB_USERNAME = '', DB_PASSWORD = '', DB_HOST = '', DB_PORT = '' } = process.env;
 
-console.log('process.env.NODE_ENV :>> ', process.env.NODE_ENV);
+console.log('process.env :>> ', process.env);
 const sequelize = new Sequelize(DB_DATABASE, DB_USERNAME, DB_PASSWORD, {
   host: process.env.NODE_ENV === 'DEV' ? 'localhost' : DB_HOST,
   dialect: 'postgres',
