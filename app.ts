@@ -1,12 +1,12 @@
 import cookieParser from 'cookie-parser';
-import securityMiddleware from 'core/middleware/securityMiddleware';
+import securityMiddleware from 'core/middleware/securityMiddleware.js';
 import cors from 'cors';
 import express, { NextFunction, Request, Response } from 'express';
 import helmet from 'helmet';
 import createError from 'http-errors';
 import logger from 'morgan';
 import path from 'path';
-import apiRouter from 'routes/index';
+import apiRouter from 'routes/index.js';
 import { fileURLToPath } from 'url';
 
 interface ErrorWithStatus extends Error {

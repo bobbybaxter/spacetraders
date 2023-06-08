@@ -1,7 +1,7 @@
 // import { LoggingWinston } from '@google-cloud/logging-winston';
 import { MESSAGE } from 'triple-beam';
 import winston from 'winston';
-import pgTransport from './pgTransport';
+import pgTransport from './pgTransport.js';
 
 const { createLogger, format, transports, addColors } = winston;
 const { combine, timestamp, printf } = format;

@@ -1,6 +1,6 @@
-import app from 'app';
 import debugFactory from 'debug';
 import http from 'http';
+import app from './app.js';
 
 const debug = debugFactory('spacetraders:server');
 

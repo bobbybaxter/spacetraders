@@ -11,7 +11,9 @@
 	],
 	"ignorePatterns": [
 		"**/node_modules/*",
-		"**/views/*"
+		"**/views/*",
+		"**/dist/*",
+		"*.cjs"
 	],
 	"parser": "@typescript-eslint/parser",
 	"parserOptions": {
