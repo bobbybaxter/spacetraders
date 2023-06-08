@@ -14,7 +14,7 @@ const { DB_DATABASE = '', DB_USERNAME = '', DB_PASSWORD = '', DB_HOST = '', DB_P
 const sequelize = new Sequelize(DB_DATABASE, DB_USERNAME, DB_PASSWORD, {
   host: process.env.NODE_ENV === 'DEV' ? 'localhost' : DB_HOST,
   dialect: 'postgres',
-  port: parseInt(DB_PORT, 2),
+  port: parseInt(DB_PORT, 10),
   pool: {
     max: 300,
     min: 10,
