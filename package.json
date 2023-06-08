@@ -8,7 +8,7 @@
   },
   "scripts": {
     "start": "NODE_ENV=PROD tsx index.ts",
-    "build": "tsc --build --clean && tsc --build && tsc-alias",
+    "build": "tsc --build --clean && tsc --build && tsc-alias && cp -R views/ dist/views",
     "local": "NODE_ENV=DEV tsx watch index.ts",
     "do:ci": "rm -rf node_modules && npm ci",
     "do:start": "npm run build && pm2 start ecosystem.config.cjs",
