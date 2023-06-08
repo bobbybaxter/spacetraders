@@ -6,7 +6,12 @@ module.exports = {
       env: {
         NODE_ENV: 'PROD',
       },
+      env_dev: {
+        NODE_ENV: 'DEV'
+      },
       watch: true,
+      time: true,
+      merge_logs: true,
     },
   ],
 };
