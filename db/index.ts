@@ -1,12 +1,15 @@
 import * as dotenv from 'dotenv';
 import { readdirSync } from 'fs';
 import path, { basename } from 'path';
-import { DataTypes, Sequelize } from 'sequelize';
+import { Sequelize } from 'sequelize';
 import { fileURLToPath } from 'url';
+import startQueue from '../core/queue/index.js';
+import { Queue } from '../core/queue/Queue.js';
 
 dotenv.config();
 
 const db: any = {};
+const queue = new Queue();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const { DB_DATABASE = '', DB_USERNAME = '', DB_PASSWORD = '', DB_HOST = '', DB_PORT = '3000' } = process.env;
@@ -30,13 +33,13 @@ const sequelize = new Sequelize(DB_DATABASE, DB_USERNAME, DB_PASSWORD, {
   logging: false,
 });
 
-const files = readdirSync(__dirname).filter(
-  (file) => file.indexOf('.') !== 0 && file !== basename(__filename) && file.slice(-3) === '.js'
+const files = readdirSync(`${__dirname}/models`).filter(
+  (file) => file.indexOf('.') !== 0 && file !== basename(__filename) && file.slice(-3) === '.ts'
 );
 
 for await (const file of files) {
-  const model = await import(`./${file}`);
-  const namedModel = model.default(sequelize, DataTypes);
+  const model = await import(`./models/${file}`);
+  const namedModel = model.default(sequelize);
   db[namedModel.name] = namedModel;
 }
 
@@ -55,6 +58,7 @@ sequelize
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
+db.queue = startQueue(queue);
 
 await db.sequelize.sync();
 

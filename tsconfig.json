@@ -1,18 +1,20 @@
 {
 	"compilerOptions": {
+		"allowJs": true,
+		"baseUrl": ".",
+		// "checkJs": true,
+		"esModuleInterop": true,
+		"emitDecoratorMetadata": true,
+		"experimentalDecorators": true,
+		"inlineSourceMap": true,
 		"module": "esnext",
-		"target": "esnext",
 		"moduleResolution": "node16",
 		"noImplicitReturns": true,
 		"noImplicitThis": true,
-		"esModuleInterop": true,
-		"inlineSourceMap": true,
-		"strict": true,
-		"allowJs": true,
-		// "checkJs": true,
-		"rootDir": ".",
 		"outDir": "dist/",
-		"baseUrl": ".",
+		"rootDir": ".",
+		"strict": true,
+		"target": "esnext",
 		"typeRoots": [
 			"node_modules/@types"
 		]
